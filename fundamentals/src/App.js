@@ -1,4 +1,7 @@
 import User from "./components/User";
+import InputExample from "./components/InputExample";
+import Counter from "./components/Counter";
+import { useState } from "react";
 
 const friends = [
   { id: 1, name: "Ahmet" },
@@ -7,6 +10,7 @@ const friends = [
 ];
 
 function App() {
+  const [isVisible, setIsVisible] = useState(true);
   return (
     <>
       <User
@@ -17,6 +21,12 @@ function App() {
         friends={friends}
         address={{ title: "Ataşehir/İstanbul", zip: 34755 }}
       />
+      <InputExample />
+
+      {isVisible && <Counter />}
+      <br />
+
+      <button onClick={() => setIsVisible(!isVisible)}>Toggle Counter</button>
     </>
   );
 }
