@@ -23,13 +23,14 @@ function Form({ addTodos, todos }) {
   return (
     <form onSubmit={onSubmit}>
       <input
+        className="add-input"
         name="todo_text"
         placeholder="Add todos.."
         onChange={onChangeInput}
         value={form.todo_text}
       />{" "}
       <br />
-      <button>Add</button>
+      <button className="add-btn">Add</button>
     </form>
   );
 }

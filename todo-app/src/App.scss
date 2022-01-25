@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  list-style-type: none;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+body {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #4d4d4d;
+  width: 60%;
+  cursor: pointer;
+}
+:focus {
+  outline: 0;
+}
+.container {
+  padding: 20px 40px;
+  color: #fff;
+  height: 340px;
+  background: rgb(172, 203, 238);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 203, 238, 1) 0%,
+    rgba(231, 240, 253, 1) 100%
+  );
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.todos-title {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(172, 203, 238, 1) 0%,
+    rgba(231, 240, 253, 1) 100%
+  );
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.line {
+  text-decoration: line-through;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.add-input {
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+}
+.add-btn {
+  background: #fff;
+  cursor: pointer;
+  padding: 5px 20px;
+  border: none;
+  display: flex;
+  color: #555;
+}
+.todos-container {
+  .filter {
+    border: none;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+  }
+
+  .todo-list {
+    max-height: 130px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+  }
+  ul {
+    li {
+      position: relative;
+      margin-bottom: 5px;
+      input {
+        margin-right: 5px;
+      }
+      input[type="checkbox"] {
+        width: 19px;
+        height: 19px;
+        margin: -2px 10px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+      }
+    }
+  }
+}
