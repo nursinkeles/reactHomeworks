@@ -12,10 +12,12 @@ function List({ todos, addTodos }) {
   function handleDeleteClick(id) {
     delete todos[id];
     console.log(todos);
-    let removeItem = [...todos].splice(id, 1);
-    addTodos(removeItem);
+    let updatedRows = [...todos];
+    updatedRows.splice(id, 1);
+    addTodos(updatedRows);
   }
   console.log("filtered", filtered);
+
   console.log(checked);
   return (
     <div className="todos-container">
@@ -26,19 +28,33 @@ function List({ todos, addTodos }) {
       />
       {filtered.map((todo) => (
         <ul>
-          {" "}
-          <li key={todo.id}>
-            {" "}
-            <input
-              type="checkbox"
-              onChange={(e) => {
-                e.target.checked ? (todo.done = true) : (todo.done = false);
-                setChecked(todo.done);
-              }}
-            />
-            {todo.todo_text}{" "}
-            <button onClick={() => handleDeleteClick(todo.id)}>X</button>
-          </li>{" "}
+          {todo.done ? (
+            <li key={todo.id} className="line">
+              <input
+                type="checkbox"
+                onChange={(e) => {
+                  e.target.checked ? (todo.done = true) : (todo.done = false);
+                  setChecked(todo.done);
+                  // todo.done ? setTextStyle("line") : setTextStyle("");
+                }}
+              />
+              {todo.todo_text}
+              <button onClick={() => handleDeleteClick(todo.id)}>X</button>
+            </li>
+          ) : (
+            <li key={todo.id}>
+              <input
+                type="checkbox"
+                onChange={(e) => {
+                  e.target.checked ? (todo.done = true) : (todo.done = false);
+                  setChecked(todo.done);
+                  // todo.done ? setTextStyle("line") : setTextStyle("");
+                }}
+              />
+              {todo.todo_text}
+              <button onClick={() => handleDeleteClick(todo.id)}>X</button>
+            </li>
+          )}
         </ul>
       ))}
       Total todos : {filtered.length}
