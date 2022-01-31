@@ -10,8 +10,9 @@ function App() {
       hobies: [],
       country: "turkey",
     },
+
     onSubmit: (values) => {
-      console.log(values);
+      console.log("value: " + values);
     },
   });
 
