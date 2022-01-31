@@ -14,6 +14,7 @@ function App() {
       console.log(values);
     },
   });
+
   return (
     <div className="App">
       <h1>Sign Up</h1>
