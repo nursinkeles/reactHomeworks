@@ -22,7 +22,6 @@ function App() {
         <input id="firstName" name="firstName" onChange={handleChange} />
         <br />
         <br />
-        {/* initialvalıuesla inputdaki name aynı olmak zorunda özelleştirmeler yapabilmek için input ve form taglerini kulalnabiliyourz */}
         <label htmlFor="lastName">Last Name</label>
         <input id="lastName" name="lastName" onChange={handleChange} />
         <br />
@@ -87,8 +86,6 @@ function App() {
         <br />
 
         <code>{JSON.stringify(values)}</code>
-        {/* initial valueları göstermek istersek inputlara value değeeri olarak vermemiz gerekit
-             radiolar için checked={values.gender === "female"} gibi yazmmaız gerekir */}
       </form>
     </div>
   );
