@@ -12,7 +12,7 @@ function App() {
     },
 
     onSubmit: (values) => {
-      console.log("value: " + values);
+      console.log(values);
     },
   });
 
