@@ -1,23 +1,24 @@
 import { useFormik } from "formik";
 import validationSchema from "./Validations";
 function Signup() {
-  const { handleSubmit, handleChange, values } = useFormik({
-    initialValues: {
-      // firstName: "",
-      // lastName: "",
-      email: "",
-      // gender: "",
-      // hobies: [],
-      // country: "turkey",
-      password: "",
-      passwordConfirm: "",
-    },
+  const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
+    useFormik({
+      initialValues: {
+        // firstName: "",
+        // lastName: "",
+        email: "",
+        // gender: "",
+        // hobies: [],
+        // country: "turkey",
+        password: "",
+        passwordConfirm: "",
+      },
 
-    onSubmit: (values) => {
-      console.log(values);
-    },
-    validationSchema,
-  });
+      onSubmit: (values) => {
+        console.log(values);
+      },
+      validationSchema,
+    });
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -30,7 +31,14 @@ function Signup() {
         <br />
         <br /> */}
         <label htmlFor="email">Email</label>
-        <input id="email" name="email" type="email" onChange={handleChange} />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+        {errors.email && touched.email && <div>{errors.email}</div>}
         <br /> <br />
         <label>Password</label>
         <input
@@ -38,7 +46,9 @@ function Signup() {
           type="password"
           value={values.password}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
+        {errors.password && touched.password && <div>{errors.password}</div>}
         <br /> <br />
         <label>ConfirmPassword</label>
         <input
@@ -46,7 +56,11 @@ function Signup() {
           type="password"
           value={values.passwordConfirm}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
+        {errors.passwordConfirm && touched.passwordConfirm && (
+          <div>{errors.passwordConfirm}</div>
+        )}
         {/* <br />
         <br />
         <span>Male</span>
